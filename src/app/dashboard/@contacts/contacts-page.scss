@@ -1,0 +1,4 @@
+.contacts-page {
+    @apply mt-[50px] h-screen overflow-scroll;
+    height: calc(100vh - 50px);
+}

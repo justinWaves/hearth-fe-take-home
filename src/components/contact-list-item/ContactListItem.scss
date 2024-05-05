@@ -1,0 +1,21 @@
+.contact-list-item{
+    @apply border-b border-primary text-lightText hover:text-secondary px-2 py-4 ;
+    @apply hover:bg-zinc-100;
+
+    &__label-container{
+       @apply  flex flex-row items-center;
+    }
+
+    &__first-name{
+        @apply hover:text-primary;
+
+    }
+    &__job-title{
+        @apply text-xs text-extraLightText;
+    }
+
+    &__avatar{
+        @apply w-20
+    }
+
+}

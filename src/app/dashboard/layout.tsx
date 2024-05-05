@@ -1,10 +1,23 @@
-import React from "react";
+import NavBar from "@/components/nav-bar/NavBar";
+import { ReactNode } from "react";
+import "./dashboard.scss";
 
-function DashboardLayout({ children }: { children: React.ReactNode }) {
+function DashboardLayout({
+  children,
+  contacts,
+}: {
+  children: ReactNode;
+  contacts: ReactNode;
+}) {
   return (
     <>
-      <h1>DashboardLayout</h1>
+      <NavBar />
+      <div className="dashboard__layout">
+        <div className="dashboard__menu-container">
       {children}
+      </div>
+      {contacts}
+      </div>
     </>
   );
 }

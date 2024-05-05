@@ -1,0 +1,9 @@
+.contact-detail-card {
+  @apply absolute w-screen h-[calc(100%-50px)] md:w-[calc(100%-200px)];
+  @apply grid place-content-center;
+  @apply bg-red-200;
+
+  &__content {
+    @apply px-5 w-screen md:w-full;
+  }
+}

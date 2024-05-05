@@ -1,0 +1,4 @@
+.contact-list {
+  @apply p-5 w-screen md:w-[calc(100vw-200px)];
+  @apply cursor-pointer;
+}

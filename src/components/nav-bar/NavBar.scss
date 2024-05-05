@@ -1,0 +1,7 @@
+.navbar{
+    @apply absolute z-10 border-b border-primary w-screen;
+    
+    &__logo-image{
+        @apply mx-auto cursor-pointer;
+    }
+}
