@@ -1,21 +1,23 @@
-.dashboard{
+.dashboard {
+  &__layout {
+    @apply flex h-screen;
+  }
 
-
-    &__layout{
-        @apply  flex h-screen  ;
-    }
-
-    &__menu-container{
-        @apply   hidden md:block h-1/2 w-[200px]  mt-[50px]  ;
-        @apply border-r border-primary ;
-        @apply bg-white;
-        height: calc(100vh - 50px);
-        
-    }
-    &__menu-items{
-        @apply pt-5;
-    }
-    &__menu-header{
-        @apply  text-extraLightText pl-5
-    }
+  &__menu-container {
+    @apply hidden md:block h-1/2 w-[200px]  mt-[50px] pl-5;
+    @apply border-r border-primary;
+    @apply bg-white;
+    height: calc(100vh - 50px);
+  }
+  &__menu-items {
+    @apply pt-5;
+  }
+  &__menu-header {
+    @apply text-extraLightText mb-2 mt-5;
+  }
+  &__menu-link {
+    @apply text-primary font-semibold mb-3;
+    @apply cursor-pointer;
+    @apply hover:text-secondary;
+  }
 }

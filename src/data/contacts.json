@@ -17,7 +17,7 @@
         "email": "bob47@gmail.com",
         "phone": "234-567-8901",
         "instagramHandle": "@bobbyS",
-        "temperatureScore": 65
+        "temperatureScore": 11
       },
       {
         "id": 3,
@@ -27,7 +27,7 @@
         "email": "carol33@gmail.com",
         "phone": "345-678-9012",
         "instagramHandle": "@c_martinez",
-        "temperatureScore": 92
+        "temperatureScore": 50
       },
       {
         "id": 4,
@@ -37,7 +37,7 @@
         "email": "david21@gmail.com",
         "phone": "456-789-0123",
         "instagramHandle": "@dlee",
-        "temperatureScore": 75
+        "temperatureScore": 21
       },
       {
         "id": 5,
@@ -47,7 +47,7 @@
         "email": "emma56@gmail.com",
         "phone": "567-890-1234",
         "instagramHandle": "@emma_g",
-        "temperatureScore": 83
+        "temperatureScore": 13
       },
       {
         "id": 6,
@@ -67,7 +67,7 @@
         "email": "grace39@gmail.com",
         "phone": "789-012-3456",
         "instagramHandle": "@gracek",
-        "temperatureScore": 90
+        "temperatureScore": 33
       },
       {
         "id": 8,
@@ -97,7 +97,7 @@
         "email": "jake48@gmail.com",
         "phone": "012-345-6789",
         "instagramHandle": "@jake_h",
-        "temperatureScore": 64
+        "temperatureScore": 12
       },
       {
         "id": 11,
@@ -127,7 +127,7 @@
         "email": "mia15@gmail.com",
         "phone": "345-234-6789",
         "instagramHandle": "@mia_w",
-        "temperatureScore": 69
+        "temperatureScore": 15
       },
       {
         "id": 14,
@@ -137,7 +137,7 @@
         "email": "noah77@gmail.com",
         "phone": "456-345-7890",
         "instagramHandle": "@noahm",
-        "temperatureScore": 95
+        "temperatureScore": 7
       },
       {
         "id": 15,
@@ -157,7 +157,7 @@
         "email": "patrick33@gmail.com",
         "phone": "678-567-9012",
         "instagramHandle": "@patr",
-        "temperatureScore": 77
+        "temperatureScore": 99
       },
       {
         "id": 17,
@@ -177,7 +177,7 @@
         "email": "rachel29@gmail.com",
         "phone": "890-789-1234",
         "instagramHandle": "@rachel_g",
-        "temperatureScore": 74
+        "temperatureScore": 45
       },
       {
         "id": 19,
@@ -197,6 +197,6 @@
         "email": "tina55@gmail.com",
         "phone": "012-901-3456",
         "instagramHandle": "@tina_a",
-        "temperatureScore": 89
+        "temperatureScore": 41
       }
     ]

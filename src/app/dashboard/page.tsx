@@ -4,9 +4,10 @@ import "./dashboard.scss";
 function DashboardPage() {
   return (
     <div className="dashboard__menu-items">
-      <h1 className="dashboard__menu-header"> Main</h1>
-
-      <h1 className="dashboard__menu-header"> Inboxes</h1>
+      <p className="dashboard__menu-header"> Main</p>
+      <h1 className="dashboard__menu-link"> Contacts</h1>
+      <h1 className="dashboard__menu-link"> Inbox</h1>
+      <h1 className="dashboard__menu-link"> Settings</h1>
     </div>
   );
 }

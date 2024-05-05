@@ -1,0 +1,16 @@
+.temperature-display {
+  @apply relative flex items-center justify-center h-52 w-52;
+
+  &__number {
+    @apply relative text-5xl font-bold text-boldText;
+  }
+  &__output-display {
+    @apply flex-row text-center;
+  }
+  &__text {
+    @apply relative mt-2 text-lightText font-semibold text-xl;
+  }
+  &__bg-blur {
+    @apply absolute inset-0 blur-xl rounded-full opacity-75;
+  }
+}
