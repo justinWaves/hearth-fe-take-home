@@ -1,20 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import Button from "@/elements/Button/Button";
+import Button from "@/elements/button/Button";
 import "./homepage.scss";
 import { bemElement } from "../utils/bem-class-names";
-import { joinClassNames } from "../utils/join-class-names";
 
-interface IHomePageProps {
-  className?: string;
-}
-
-export default function Home({ className = "" }: IHomePageProps) {
+export default function Home() {
   const baseClassName = "homepage";
   const bem = bemElement(baseClassName);
 
   return (
-    <main className={joinClassNames(baseClassName, className)}>
+    <main className={baseClassName}>
       <Image
         src={"/hearth_ai_logo.jpg"}
         alt=""

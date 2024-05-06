@@ -1,6 +1,5 @@
 // src/pages/ContactListPage.tsx
 "use client";
-import { wait } from "lib/wait";
 
 import React, { useState } from "react";
 import ContactList from "@/components/contact-list/ContactList";
