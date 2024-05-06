@@ -5,7 +5,7 @@
 
   &__content {
     @apply w-screen h-[calc(100vh-50px)]  md:w-[450px] md:h-[700px]  flex flex-col;
-    @apply px-5 md:p-5;
+    @apply md:px-5 md:p-5;
     @apply bg-white  bg-opacity-70 md:bg-opacity-60;
     @apply border-primary md:border md:rounded-xl;
   }
