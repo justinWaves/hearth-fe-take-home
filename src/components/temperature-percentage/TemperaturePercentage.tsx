@@ -20,14 +20,12 @@ const TemperaturePercentage: React.FC<TemperaturePercentageProps> = ({
 }) => {
   const { bgColor, temperatureLabel } = useTemperatureDetails(value);
 
-  // Animation control
   const [targetValue, setTargetValue] = useState(0);
   const animatedValue = useSpring({
     from: { val: 0 },
     to: { val: targetValue },
   });
 
-  // Update the target value when the prop changes
   useEffect(() => {
     setTargetValue(value);
   }, [value]);
@@ -35,7 +33,7 @@ const TemperaturePercentage: React.FC<TemperaturePercentageProps> = ({
   return (
     <div className={joinClassNames(baseClassName, className)}>
       {/* Blurry Background */}
-      <div className={bem("bg-blur") + " " + bgColor} />
+      <div className={`${bem("background-blur")} ${bgColor}`} />
       {/* Main Text Display */}
       <div className={bem("output-display")}>
         <animated.h1 className={bem("number")}>
