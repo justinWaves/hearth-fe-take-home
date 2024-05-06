@@ -1,11 +1,11 @@
 .contact-detail-card {
-  @apply absolute w-screen h-[calc(100%-50px)] md:w-[calc(100%-200px)];
+  @apply absolute w-screen h-[calc(100vh-50px)] md:w-[calc(100%-200px)];
   @apply grid place-content-center;
   @apply backdrop-blur-md;
 
   &__content {
     @apply w-screen h-[calc(100vh-50px)]  md:w-[450px] md:h-[700px]  flex flex-col;
-    @apply md:px-5 md:p-5;
+    @apply md:px-5 md:p-5 pb-28 md:pb-0;
     @apply bg-white  bg-opacity-70 md:bg-opacity-60;
     @apply border-primary md:border md:rounded-xl;
   }
@@ -14,16 +14,16 @@
     @apply text-primary hover:text-secondary;
   }
   &__temp-display {
-    @apply mx-auto;
+    @apply mx-auto relative -mt-12 md:-mt-10;
   }
   &__temp-gauge {
-    @apply mx-auto relative z-10 top-60 -mt-72 opacity-60;
+    @apply mx-auto min-w-52 relative z-10 top-60 -mt-72 opacity-60;
   }
   &__avatar {
-    @apply mb-5 w-[200px] mx-auto relative z-50;
+    @apply mb-5 w-[150px] md:w-[200px] mx-auto relative z-50;
   }
   &__heading {
-    @apply text-center mb-5;
+    @apply text-center mb-3 md:mb-5;
   }
   &__full-name {
     @apply font-bold text-4xl text-boldText;
@@ -32,10 +32,13 @@
     @apply text-lg text-zinc-400;
   }
   &__contact-list {
-    @apply text-boldText flex mx-auto mb-4  p-2 rounded-lg;
+    @apply text-boldText flex-row sm:flex mx-auto mb-4  p-2 rounded-lg;
   }
   &__contact-item {
     @apply flex px-5 py-1;
+  }
+  &__contact-item--icon {
+    @apply text-primary;
   }
   &__contact-item--text {
     @apply ml-2 text-zinc-600;

@@ -1,9 +1,13 @@
-.homepage{
-    @apply flex min-h-screen  flex-col items-center justify-between p-24;
+.homepage {
+  @apply h-[calc(100vh-50px)] grid place-content-center;
 
-    &__login-button {
-        @apply px-8 py-2  rounded-full ;
-        @apply border border-primary hover:border-secondary;
-        @apply text-secondary hover:text-primary;
-    }
+  &__main-image {
+    @apply mt-10 absolute mx-auto left-0 right-0;
+  }
+
+  &__login-button {
+    @apply px-8 py-2 rounded-full;
+    @apply border border-primary hover:border-secondary;
+    @apply text-secondary hover:text-primary;
+  }
 }

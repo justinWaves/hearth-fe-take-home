@@ -4,7 +4,6 @@ import { useSpring, animated } from "@react-spring/web";
 import "./TemperaturePercentage.scss";
 import { bemElement } from "../../utils/bem-class-names";
 import { joinClassNames } from "../../utils/join-class-names";
-import useTemperatureDetails from "../../hooks/useTemperatureDetails";
 
 interface TemperaturePercentageProps {
   value: number;
@@ -18,8 +17,6 @@ const TemperaturePercentage: React.FC<TemperaturePercentageProps> = ({
   value,
   className = "",
 }) => {
-  const { bgColor, temperatureLabel } = useTemperatureDetails(value);
-
   const [targetValue, setTargetValue] = useState(0);
   const animatedValue = useSpring({
     from: { val: 0 },
@@ -30,9 +27,22 @@ const TemperaturePercentage: React.FC<TemperaturePercentageProps> = ({
     setTargetValue(value);
   }, [value]);
 
+  let bgColor = "bg-blue-200";
+  let temperatureLabel = "";
+
+  if (value < 33) {
+    bgColor = "bg-blue-200";
+    temperatureLabel = "Frigid";
+  } else if (value < 66) {
+    bgColor = "bg-purple-200";
+    temperatureLabel = "Cold";
+  } else {
+    bgColor = "bg-red-200";
+    temperatureLabel = "Hot";
+  }
+
   return (
     <div className={joinClassNames(baseClassName, className)}>
-      {/* Blurry Background */}
       <div className={`${bem("background-blur")} ${bgColor}`} />
       {/* Main Text Display */}
       <div className={bem("output-display")}>

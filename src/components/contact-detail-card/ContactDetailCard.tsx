@@ -58,23 +58,23 @@ const ContactDetailCard: React.FC<ContactDetailProps> = ({
         <div className={bem("contact-list")}>
           <div>
             <div className={bem("contact-item")}>
-              <IconMail />
+              <IconMail className={bem("contact-item--icon")} />
               <p className={bem("contact-item--text")}>{contact.email}</p>
             </div>
             <div className={bem("contact-item")}>
-              <IconPhone />
+              <IconPhone className={bem("contact-item--icon")} />
               <p className={bem("contact-item--text")}>{contact.phone}</p>
             </div>
           </div>
           <div>
             <div className={bem("contact-item")}>
-              <IconBrandInstagram />
+              <IconBrandInstagram className={bem("contact-item--icon")} />
               <p className={bem("contact-item--text")}>
                 {contact.instagramHandle}
               </p>
             </div>
             <div className={bem("contact-item")}>
-              <IconBrandLinkedin />
+              <IconBrandLinkedin className={bem("contact-item--icon")} />
               <p className={bem("contact-item--text")}>
                 {contact.instagramHandle}
               </p>
