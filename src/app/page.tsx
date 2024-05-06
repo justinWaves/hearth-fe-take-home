@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Button from "@/elements/button/Button";
+import Button from "@/elements/Button/Button";
 import "./homepage.scss";
 import { bemElement } from "../utils/bem-class-names";
 
