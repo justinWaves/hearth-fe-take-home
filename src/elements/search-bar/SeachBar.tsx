@@ -1,5 +1,5 @@
-// src/components/SearchBar.tsx
-import React, { useState, FC } from "react";
+// src/elements/search-bar/SearchBar.tsx
+import React, { FC } from "react";
 import { IconSearch } from "@tabler/icons-react";
 import { bemElement } from "@/utils/bem-class-names";
 import { joinClassNames } from "@/utils/join-class-names";
@@ -8,6 +8,7 @@ import "./SearchBar.scss";
 interface SearchBarProps {
   className?: string;
   placeholder?: string;
+  searchQuery: string;
   onSearch: (query: string) => void;
 }
 
@@ -17,35 +18,23 @@ const bem = bemElement(baseClassName);
 const SearchBar: FC<SearchBarProps> = ({
   className = "",
   placeholder = "Search...",
+  searchQuery,
   onSearch,
 }) => {
-  const [query, setQuery] = useState("");
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.target.value);
-  };
-
-  const handleSearch = () => {
-    onSearch(query);
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      handleSearch();
-    }
+    onSearch(e.target.value);
   };
 
   return (
     <div className={joinClassNames(baseClassName, className)}>
       <input
         type="text"
-        value={query}
+        value={searchQuery}
         onChange={handleInputChange}
-        onKeyDown={handleKeyDown}
         className={bem("input")}
         placeholder={placeholder}
       />
-      <button onClick={handleSearch} className={bem("search-button")}>
+      <button className={bem("search-button")}>
         <IconSearch size={20} />
       </button>
     </div>

@@ -1,5 +1,7 @@
+// src/components/contact-list/ContactList.tsx
 "use client";
-import React, { useState } from "react";
+
+import React, { useState, FC } from "react";
 import contactsData from "../../data/contacts.json";
 import "./ContactList.scss";
 import { IContact } from "@/types";
@@ -9,17 +11,29 @@ import { joinClassNames } from "../../utils/join-class-names";
 
 interface IContactListProps {
   className?: string;
+  searchQuery: string;
 }
 
-const ContactList: React.FC = ({ className = "" }: IContactListProps) => {
+const ContactList: FC<IContactListProps> = ({
+  className = "",
+  searchQuery,
+}) => {
   const [selectedContact, setSelectedContact] = useState<IContact | null>(null);
 
   const handleContactClick = (contact: IContact) => {
-    setSelectedContact(contact); // Set the selected contact to show in the popup
+    setSelectedContact(contact);
   };
-  const contacts = contactsData.sort((a, b) =>
-    a.firstName.localeCompare(b.firstName)
-  );
+
+  // Filter and sort contacts based on the search query
+  const filteredContacts = contactsData
+    .filter(
+      (contact) =>
+        contact.firstName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        contact.lastName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        contact.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        contact.phone.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+    .sort((a, b) => a.firstName.localeCompare(b.firstName));
 
   const baseClassName = "contact-list";
 
@@ -32,7 +46,7 @@ const ContactList: React.FC = ({ className = "" }: IContactListProps) => {
         />
       )}
       <ul className={joinClassNames(baseClassName, className)}>
-        {contacts.map((contact) => (
+        {filteredContacts.map((contact) => (
           <ContactListItem
             key={contact.id}
             contact={contact}
@@ -43,4 +57,5 @@ const ContactList: React.FC = ({ className = "" }: IContactListProps) => {
     </>
   );
 };
+
 export default ContactList;

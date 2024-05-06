@@ -1,0 +1,7 @@
+.contact-loading-page {
+  @apply grid place-content-center;
+
+  &__loading-icon {
+    @apply animate-spin;
+  }
+}

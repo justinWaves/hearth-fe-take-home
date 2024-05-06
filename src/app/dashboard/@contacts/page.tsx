@@ -1,10 +1,13 @@
+// src/pages/ContactListPage.tsx
 "use client";
+import { wait } from "lib/wait";
+
+import React, { useState } from "react";
 import ContactList from "@/components/contact-list/ContactList";
-import React from "react";
-import "./contacts-page.scss";
-import { joinClassNames } from "../../../utils/join-class-names";
-import { bemElement } from "../../../utils/bem-class-names";
 import SearchBar from "@/elements/search-bar/SeachBar";
+import { joinClassNames } from "@/utils/join-class-names";
+import { bemElement } from "@/utils/bem-class-names";
+import "./contacts-page.scss";
 
 interface IContactListPageProps {
   className?: string;
@@ -13,13 +16,23 @@ interface IContactListPageProps {
 const baseClassName = "contacts-page";
 const bem = bemElement(baseClassName);
 
-const ContactListPage: React.FC = ({
+const ContactListPage: React.FC<IContactListPageProps> = ({
   className = "",
-}: IContactListPageProps) => {
+}) => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+  };
+
   return (
     <div className={joinClassNames(baseClassName, className)}>
-      <SearchBar onSearch={() => {}} className={bem("search-bar")} />
-      <ContactList />
+      <SearchBar
+        searchQuery={searchQuery}
+        onSearch={handleSearch}
+        className={bem("search-bar")}
+      />
+      <ContactList searchQuery={searchQuery} />
     </div>
   );
 };
