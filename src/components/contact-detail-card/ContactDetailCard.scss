@@ -4,21 +4,23 @@
   @apply backdrop-blur-md;
 
   &__content {
-    @apply px-5 p-5 w-screen md:max-w-screen-sm flex flex-col;
-    @apply bg-white h-[calc(100vh-50px)] md:h-fit bg-opacity-80 md:bg-opacity-60;
+    @apply w-screen h-[calc(100vh-50px)]  md:w-[450px] md:h-[700px]  flex flex-col;
+    @apply px-5 md:p-5;
+    @apply bg-white  bg-opacity-70 md:bg-opacity-60;
     @apply border-primary md:border md:rounded-xl;
   }
   &__exit-button {
-    @apply text-primary hover:text-secondary w-24 flex-col items-center -ml-5;
+    @apply relative top-5 w-24 flex-col items-center -ml-5;
+    @apply text-primary hover:text-secondary;
   }
   &__temp-display {
     @apply mx-auto;
   }
   &__temp-gauge {
-    @apply mx-auto relative z-10 top-52 -mt-52 opacity-60;
+    @apply mx-auto relative z-10 top-60 -mt-72 opacity-60;
   }
   &__avatar {
-    @apply mb-5 w-1/2 mx-auto relative z-50;
+    @apply mb-5 w-[200px] mx-auto relative z-50;
   }
   &__heading {
     @apply text-center mb-5;
@@ -30,7 +32,7 @@
     @apply text-lg text-zinc-400;
   }
   &__contact-list {
-    @apply text-boldText flex mx-auto mb-4 bg-zinc-50 p-2 rounded-lg;
+    @apply text-boldText flex mx-auto mb-4  p-2 rounded-lg;
   }
   &__contact-item {
     @apply flex px-5 py-1;

@@ -1,4 +1,4 @@
-.temperature-display {
+.temperature-percentage {
   @apply relative flex items-center justify-center h-52 w-52;
 
   &__number {
@@ -10,7 +10,7 @@
   &__text {
     @apply relative mt-2 text-lightText font-semibold text-xl;
   }
-  &__bg-blur {
+  &__background-blur {
     @apply absolute inset-0 blur-xl rounded-full opacity-75;
   }
 }

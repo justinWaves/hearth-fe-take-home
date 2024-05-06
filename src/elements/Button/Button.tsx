@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
 interface IButtonProps {
-  children: React.ReactNode; 
-  onClick?: () => void; 
-  type?: "button" | "submit" | "reset"; 
+  children: React.ReactNode;
+  onClick?: () => void;
+  type?: "button" | "submit" | "reset";
   className?: string;
   disabled?: boolean;
 }
@@ -13,12 +13,12 @@ const Button: React.FC<IButtonProps> = ({
   onClick,
   type = "button",
   className = "",
-  disabled = false
+  disabled = false,
 }) => {
   return (
     <button
       type={type}
-      className={className} 
+      className={className}
       onClick={onClick}
       disabled={disabled}
     >

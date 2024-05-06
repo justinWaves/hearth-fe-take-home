@@ -3,9 +3,11 @@ import Image from "next/image";
 import "./NavBar.scss";
 import Link from "next/link";
 
+const baseClassName = "navbar";
+
 function NavBar() {
   return (
-    <div className="navbar">
+    <div className={baseClassName}>
       <Link href={"/"}>
         <Image
           className="navbar__logo-image"
