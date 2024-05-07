@@ -9,7 +9,7 @@
     @apply flex flex-col justify-center;
     @apply bg-white bg-opacity-70 md:bg-opacity-90;
     @apply md:rounded-xl;
-    @apply shadow-lg;
+    @apply md:shadow-lg;
   }
 
   &__exit-button {
@@ -21,7 +21,7 @@
   &__temp-guage-container {
     @apply md:flex md:flex-row-reverse;
     @apply absolute md:top-10;
-    @apply top-5 left-0 right-0;
+    @apply -top-2 left-0 right-0;
   }
 
   &__temp-display {
@@ -36,14 +36,14 @@
   &__avatar {
     @apply w-[200px] md:w-[175px] z-50;
     @apply mb-5 mx-auto md:mx-0;
-    @apply absolute left-0 right-0 top-[220px];
+    @apply absolute left-0 right-0 top-[180px];
     @apply md:top-[80px] md:left-[80px];
   }
 
   &__heading-container {
     @apply flex flex-col md:flex-row items-center;
     @apply text-center md:text-left;
-    @apply absolute left-0 right-0 top-[450px];
+    @apply absolute left-0 right-0 top-[390px];
     @apply md:top-[300px];
   }
 
@@ -64,7 +64,6 @@
   }
 
   &__scroll-section {
-    @apply absolute top-[600px] md:top-[400px];
-    @apply animate-fadeIn;
+    @apply absolute top-[500px] md:top-[400px];
   }
 }

@@ -1,5 +1,5 @@
 .navbar {
-  @apply absolute z-10 border-b border-extraLightText w-screen h-[50px];
+  @apply absolute z-50 border-b border-extraLightText w-screen h-[50px];
   @apply bg-white flex justify-between px-3 md:px-10 items-center;
 
   &__logo-image {
