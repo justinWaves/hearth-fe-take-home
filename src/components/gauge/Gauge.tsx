@@ -9,24 +9,18 @@ interface IGaugeProps {
 }
 
 const Gauge: React.FC<IGaugeProps> = ({ percentage, className = "" }) => {
-  // State to store the animated percentage value
   const [targetPercentage, setTargetPercentage] = useState(0);
 
-  // Calculate the final angle for the target percentage
-  const targetAngle = (targetPercentage / 100) * 180;
-
-  // Use `useSpring` to animate the angle
   const animatedValue = useSpring({
     from: { angle: 0 },
     to: { angle: (targetPercentage / 100) * 180 },
-    config: { tension: 180, friction: 12 }, // Wobbly preset
+    config: { tension: 180, friction: 12 },
   });
-  // Update the target percentage when new props are received
+
   useEffect(() => {
     setTargetPercentage(percentage);
   }, [percentage]);
 
-  // Calculate the coordinates for the arc's endpoint based on the current angle
   const calculateEndCoordinates = (angle: number) => {
     const radians = ((angle - 90) * Math.PI) / 180;
     return {

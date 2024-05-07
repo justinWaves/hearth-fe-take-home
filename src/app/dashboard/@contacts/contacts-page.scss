@@ -2,6 +2,7 @@
   @apply h-screen w-screen;
   @apply pt-[50px];
   @apply overflow-scroll;
+  @apply animate-fadeIn;
 
   &__search-bar {
     @apply mx-auto;

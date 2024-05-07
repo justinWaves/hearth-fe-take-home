@@ -65,5 +65,6 @@
 
   &__scroll-section {
     @apply absolute top-[600px] md:top-[400px];
+    @apply animate-fadeIn;
   }
 }

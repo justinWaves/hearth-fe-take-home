@@ -3,9 +3,21 @@
 
   &__main-image {
     @apply mt-10 absolute mx-auto left-0 right-0;
+    @apply animate-fadeIn;
+  }
+  &__login-container {
+    @apply text-center space-y-2;
   }
 
   &__login-button {
-    @apply px-10 py-2;
+    @apply px-20 py-2 mt-5;
+  }
+  &__heading {
+    @apply text-headerText text-4xl;
+    @apply animate-fadeIn;
+  }
+  &__subheading {
+    @apply text-sm text-lightText;
+    @apply animate-fadeIn;
   }
 }

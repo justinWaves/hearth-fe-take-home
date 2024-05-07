@@ -19,6 +19,9 @@ export default function Home() {
       />
 
       <div className={bem("login-container")}>
+        <h1 className={bem("heading")}>Thank you for reviewing! 🤝</h1>
+        <p className={bem("subheading")}>I appreciate your time</p>
+
         <Link href={"/dashboard"}>
           <Button className={bem("login-button")}> Log In</Button>
         </Link>
