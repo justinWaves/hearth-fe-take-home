@@ -1,5 +1,3 @@
-// src/components/contact-table/ContactTable.scss
-
 .contact-table {
   @apply max-w-7xl relative top-5 md:top-0;
   @apply border-y border-zinc-200;
@@ -7,29 +5,30 @@
   @apply overflow-scroll text-nowrap;
 
   &__heading-container {
-    @apply md:ml-10 pt-5;
-    @apply relative left-5;
-    @apply md:ml-10;
+    @apply pt-5;
+    @apply xl:pl-20 pl-5;
   }
   &__heading {
     @apply text-headerText text-xl md:text-2xl text-nowrap;
   }
   &__subheading {
-    @apply text-headerText text-sm;
+    @apply text-headerText text-sm pt-2;
   }
   &__save-button {
-    @apply md:ml-5 hidden md:block;
+    @apply md:ml-5 hidden md:block text-sm;
   }
   &__save-button-mobile {
-    @apply md:hidden mt-2 mx-auto;
+    @apply md:hidden mt-2 mx-auto text-sm;
   }
   &__t-header {
     @apply text-left font-normal text-lightText border-b border-zinc-200 w-[200px] h-[10px];
     &--outer-left {
       @apply border-r;
+      @apply pl-5;
     }
     &--outer-right {
       @apply border-l;
+      @apply pr-5;
     }
     &--center {
       @apply border;
@@ -41,14 +40,17 @@
   &__cell {
     @apply text-lightText p-1 border-b border-zinc-200 min-w-[200px];
     @apply text-sm;
+
     &--outer-left {
       @apply border-r;
+      @apply pl-5;
     }
     &--center {
       @apply border;
     }
     &--outer-right {
       @apply border-l;
+      @apply pr-5;
     }
   }
   &__avatar {

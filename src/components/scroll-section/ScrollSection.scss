@@ -1,0 +1,44 @@
+.scroll-section {
+  @apply flex flex-col items-start w-full mt-5;
+
+  &__labels {
+    @apply flex justify-around border-b border-extraLightText space-x-6 pl-12;
+    @apply w-full;
+  }
+
+  &__label {
+    @apply cursor-pointer text-headerText hover:text-secondary;
+  }
+
+  &__label--active {
+    @apply text-secondary font-bold;
+  }
+
+  &__divider {
+    @apply border-t border-extraLightText mt-2;
+  }
+
+  &__content {
+    @apply w-full mt-5;
+  }
+
+  &__timeline {
+    @apply flex flex-col space-y-4 mt-5 border-l-4 border-primary pl-4;
+  }
+
+  &__timeline-event {
+    @apply flex items-center;
+  }
+
+  &__timeline-icon {
+    @apply text-primary mr-3;
+  }
+
+  &__timeline-content {
+    @apply flex flex-col;
+  }
+
+  &__section-content {
+    @apply w-full p-8;
+  }
+}

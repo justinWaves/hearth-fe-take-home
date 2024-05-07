@@ -3,6 +3,7 @@
 "use client";
 
 import React, { useState, FC } from "react";
+import Image from "next/image";
 import contactsData from "../../data/contacts.json";
 import "./ContactTable.scss";
 import { IContact } from "@/types";
@@ -18,7 +19,7 @@ import { joinClassNames } from "../../utils/join-class-names";
 import { bemElement, bemModifier } from "../../utils/bem-class-names";
 import Button from "@/elements/Button/Button";
 
-// A mapping function to return the correct logo based on the company name
+// A function mapping company names to their respective logo paths
 const getCompanyLogo = (companyName: string): string => {
   const logos: Record<string, string> = {
     Salesforce: "./images/company-logos/salesforce-logo-sm.png",
@@ -31,12 +32,11 @@ const getCompanyLogo = (companyName: string): string => {
     Notion: "./images/company-logos/notion-logo-sm.png",
   };
 
-  return logos[companyName] || "/images/default.png"; // Provide a fallback or default image
+  return logos[companyName] || "/images/default.png";
 };
 
 interface IContactTableProps {
   className?: string;
-  searchQuery: string;
 }
 
 const searchLocation = "San Francisco";
@@ -44,10 +44,7 @@ const searchLocation = "San Francisco";
 const baseClassName = "contact-table";
 const bem = bemElement(baseClassName);
 
-const ContactTable: FC<IContactTableProps> = ({
-  className = "",
-  searchQuery,
-}) => {
+const ContactTable: FC<IContactTableProps> = ({ className = "" }) => {
   const [selectedContact, setSelectedContact] = useState<IContact | null>(null);
 
   const handleContactClick = (contact: IContact) => {
@@ -57,17 +54,6 @@ const ContactTable: FC<IContactTableProps> = ({
   const handleCloseContact = () => {
     setSelectedContact(null);
   };
-
-  // Filter and sort contacts based on the search query
-  const filteredContacts = contactsData
-    .filter(
-      (contact) =>
-        contact.firstName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        contact.lastName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        contact.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        contact.phone.toLowerCase().includes(searchQuery.toLowerCase())
-    )
-    .sort((a, b) => a.firstName.localeCompare(b.firstName));
 
   return (
     <div className="w-full">
@@ -85,6 +71,7 @@ const ContactTable: FC<IContactTableProps> = ({
         <p className={bem("subheading")}>
           Here are your search results for Engineers in {searchLocation}
         </p>
+        <Button className={bem("save-button-mobile")}>Save Group</Button>
       </div>
       <table className={joinClassNames(baseClassName, className)}>
         <thead>
@@ -93,11 +80,7 @@ const ContactTable: FC<IContactTableProps> = ({
               <IconUser size={18} className={bem("header-icon")} /> Name
             </th>
             <th className={bemModifier(bem("t-header"), "center")}>
-              <img
-                src="/images/company.png"
-                alt=""
-                className={bem("header-icon")}
-              />{" "}
+              <IconBriefcase size={18} className={bem("header-icon")} />
               Company
             </th>
             <th className={bemModifier(bem("t-header"), "center")}>
@@ -117,7 +100,7 @@ const ContactTable: FC<IContactTableProps> = ({
           </tr>
         </thead>
         <tbody>
-          {filteredContacts.map((contact) => (
+          {contactsData.map((contact) => (
             <tr
               key={contact.id}
               onClick={() => handleContactClick(contact)}
@@ -136,7 +119,7 @@ const ContactTable: FC<IContactTableProps> = ({
               <td className={bemModifier(bem("cell"), "center")}>
                 <img
                   src={getCompanyLogo(contact.company)}
-                  alt={``}
+                  alt={`${contact.company} logo`}
                   className="w-6 h-6 mr-2 inline"
                 />
                 {contact.company}

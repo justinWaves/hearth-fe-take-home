@@ -7,4 +7,8 @@ export interface IContact {
   phone: string;
   instagramHandle: string;
   temperatureScore: number;
+  company: string;
+  location: string;
+  lastTouchpoint: string;
+  latestActivity: string;
 }

@@ -1,23 +1,31 @@
 .dashboard {
-  &__layout {
-    @apply flex h-screen;
-  }
+  @apply h-[calc(100vh-50px)];
 
+  &__layout {
+    @apply flex;
+  }
   &__menu-container {
-    @apply hidden md:block h-1/2 w-[200px]  mt-[50px] pl-5;
-    @apply border-r border-primary;
+    @apply w-[150px]  mt-[50px];
+    @apply pl-2 hidden md:block;
+    @apply border-r border-extraLightText;
     @apply bg-white;
     height: calc(100vh - 50px);
   }
-  &__menu-items {
-    @apply pt-5;
-  }
   &__menu-header {
-    @apply text-extraLightText mb-2 mt-5;
+    @apply mb-2 pt-5;
+    @apply text-headerText font-bold text-sm;
   }
   &__menu-link {
-    @apply text-primary font-semibold mb-3;
+    @apply flex;
+    @apply text-extraLightText font-semibold text-sm mb-3;
     @apply cursor-pointer;
     @apply hover:text-secondary;
+  }
+  &__share-button {
+    @apply text-headerText;
+    @apply w-fit p-3;
+    @apply rounded-full;
+    @apply absolute bottom-8 left-10  mx-auto;
+    @apply cursor-pointer shadow-xl;
   }
 }

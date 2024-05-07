@@ -2,6 +2,11 @@ import React from "react";
 import "./dashboard.scss";
 import { bemElement } from "../../utils/bem-class-names";
 import { joinClassNames } from "../../utils/join-class-names";
+import {
+  IconChevronRight,
+  IconChevronDown,
+  IconShare,
+} from "@tabler/icons-react";
 
 interface IDashboardPageProps {
   className?: string;
@@ -13,10 +18,18 @@ const bem = bemElement(baseClassName);
 function DashboardPage({ className = "" }: IDashboardPageProps) {
   return (
     <div className={joinClassNames(baseClassName, className)}>
-      <p className={bem("menu-header")}> Main</p>
-      <h1 className={bem("menu-link")}> Contacts</h1>
-      <h1 className={bem("menu-link")}> Inbox</h1>
-      <h1 className={bem("menu-link")}> Settings</h1>
+      <div>
+        <p className={bem("menu-header")}> Groups</p>
+        <h1 className={bem("menu-link")}>
+          <IconChevronRight /> Teams
+        </h1>
+        <h1 className={bem("menu-link")}>
+          <IconChevronDown /> Private
+        </h1>
+      </div>
+      <div className={bem("share-button")}>
+        <IconShare size="42" className="relative right-0.5" />
+      </div>
     </div>
   );
 }
