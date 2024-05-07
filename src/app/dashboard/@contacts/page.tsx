@@ -2,15 +2,16 @@
 "use client";
 
 import React, { useState } from "react";
-import ContactList from "@/components/contact-list/ContactList";
-import SearchBar from "@/elements/search-bar/SeachBar";
+import ContactTable from "@/components/contact-table/ContactTable";
 import { joinClassNames } from "@/utils/join-class-names";
 import { bemElement } from "@/utils/bem-class-names";
 import "./contacts-page.scss";
+import Button from "@/elements/Button/Button";
 
 interface IContactListPageProps {
   className?: string;
 }
+const searchLocation = "San Francisco";
 
 const baseClassName = "contacts-page";
 const bem = bemElement(baseClassName);
@@ -26,12 +27,7 @@ const ContactListPage: React.FC<IContactListPageProps> = ({
 
   return (
     <div className={joinClassNames(baseClassName, className)}>
-      <SearchBar
-        searchQuery={searchQuery}
-        onSearch={handleSearch}
-        className={bem("search-bar")}
-      />
-      <ContactList searchQuery={searchQuery} />
+      <ContactTable searchQuery={searchQuery} />
     </div>
   );
 };

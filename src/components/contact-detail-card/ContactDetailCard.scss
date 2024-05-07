@@ -1,5 +1,5 @@
 .contact-detail-card {
-  @apply absolute w-screen h-[calc(100vh-50px)] md:w-[calc(100%-200px)];
+  @apply absolute z-50 w-screen h-[calc(100vh-50px)] md:w-[calc(100%-200px)];
   @apply grid place-content-center;
   @apply backdrop-blur-md;
 

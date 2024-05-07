@@ -11,9 +11,10 @@ const config: Config = {
       colors: {
         primary: "#A7715F",
         secondary: "#B98D7F",
-        lightText: "#53556B",
+        lightText: "#9C9CA2",
         boldText: "#34364B",
-        extraLightText: "#C0C1D2"
+        headerText: "#868590",
+        extraLightText: "#D4D4D4",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

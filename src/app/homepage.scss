@@ -6,8 +6,6 @@
   }
 
   &__login-button {
-    @apply px-8 py-2 rounded-full;
-    @apply border border-primary hover:border-secondary;
-    @apply text-secondary hover:text-primary;
+    @apply p-5;
   }
 }

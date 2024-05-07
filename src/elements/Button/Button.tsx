@@ -1,4 +1,9 @@
 import React from "react";
+import "./Button.scss";
+import { joinClassNames } from "../../utils/join-class-names";
+import { bemElement } from "../../utils/bem-class-names";
+
+const baseClassName = "button";
 
 interface IButtonProps {
   children: React.ReactNode;
@@ -18,7 +23,7 @@ const Button: React.FC<IButtonProps> = ({
   return (
     <button
       type={type}
-      className={className}
+      className={joinClassNames(baseClassName, className)}
       onClick={onClick}
       disabled={disabled}
     >

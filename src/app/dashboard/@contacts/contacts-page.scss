@@ -1,5 +1,7 @@
 .contacts-page {
-  @apply pt-[50px] h-screen overflow-scroll pb-32;
+  @apply md:w-[calc(100vw-200px)] h-screen;
+  @apply pt-[50px] pb-32;
+  @apply overflow-scroll;
 
   &__search-bar {
     @apply mx-auto;

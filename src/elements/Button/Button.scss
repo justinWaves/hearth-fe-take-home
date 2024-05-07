@@ -1,0 +1,6 @@
+.button {
+  @apply font-semibold text-primary text-nowrap;
+  @apply border border-headerText rounded-md;
+  @apply px-4 max-h-10;
+  @apply hover:text-secondary hover:border-extraLightText;
+}
