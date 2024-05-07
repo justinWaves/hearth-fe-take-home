@@ -1,5 +1,6 @@
+// src/components/contact-detail-card/ContactDetailCard.scss
 .contact-detail-card {
-  @apply absolute z-50 w-screen h-[calc(100vh-50px)] md:w-[calc(100vw-120px)];
+  @apply absolute z-50 w-screen h-[calc(100vh-50px)] md:w-[calc(100vw-134px)];
   @apply grid place-content-center;
   @apply backdrop-blur-md;
 
@@ -18,11 +19,14 @@
   }
 
   &__temp-guage-container {
-    @apply md:flex md:flex-row-reverse absolute md:top-10 top-5 left-0 right-0;
+    @apply md:flex md:flex-row-reverse;
+    @apply absolute md:top-10;
+    @apply top-5 left-0 right-0;
   }
 
   &__temp-display {
-    @apply mx-auto relative md:top-10 md:right-5;
+    @apply mx-auto relative;
+    @apply md:top-10 md:right-5;
   }
 
   &__temp-gauge {
@@ -30,13 +34,17 @@
   }
 
   &__avatar {
-    @apply w-[200px] md:w-[175px] z-50 mb-5 mx-auto md:mx-0 absolute left-0 right-0 top-[220px];
-    @apply md:top-[100px] md:left-[80px];
+    @apply w-[200px] md:w-[175px] z-50;
+    @apply mb-5 mx-auto md:mx-0;
+    @apply absolute left-0 right-0 top-[220px];
+    @apply md:top-[80px] md:left-[80px];
   }
 
   &__heading-container {
-    @apply flex flex-col md:flex-row items-center text-center md:text-left;
-    @apply absolute left-0 right-0 top-[450px] md:top-[300px];
+    @apply flex flex-col md:flex-row items-center;
+    @apply text-center md:text-left;
+    @apply absolute left-0 right-0 top-[450px];
+    @apply md:top-[300px];
   }
 
   &__heading {
@@ -55,14 +63,7 @@
     @apply flex mx-auto text-boldText space-x-3;
   }
 
-  &__social-icon {
-    @apply rounded-full bg-primary h-fit p-1 cursor-pointer hover:bg-secondary;
-  }
-
-  &__social-icon--icon {
-    @apply text-white;
-  }
   &__scroll-section {
-    @apply absolute top-[560px] md:top-[400px];
+    @apply absolute top-[600px] md:top-[400px];
   }
 }

@@ -11,6 +11,7 @@ import {
 } from "@tabler/icons-react";
 import Gauge from "../gauge/Gauge";
 import TemperaturePercentage from "../temperature-percentage/TemperaturePercentage";
+import SocialIconGroup from "../socail-icon-group/SocialIconGroup";
 import ScrollSection from "../scroll-section/ScrollSections";
 import { bemElement } from "../../utils/bem-class-names";
 import { joinClassNames } from "../../utils/join-class-names";
@@ -24,6 +25,30 @@ interface ContactDetailProps {
 const baseClassName = "contact-detail-card";
 const bem = bemElement(baseClassName);
 
+const socialIcons = [
+  {
+    name: "email",
+    icon: (
+      <IconMailFilled className="social-icon-group__icon--icon" size="20" />
+    ),
+  },
+  {
+    name: "linkedin",
+    icon: (
+      <IconBrandLinkedin className="social-icon-group__icon--icon" size="20" />
+    ),
+  },
+  {
+    name: "twitter",
+    icon: (
+      <IconBrandTwitterFilled
+        className="social-icon-group__icon--icon"
+        size="20"
+      />
+    ),
+  },
+];
+
 const ContactDetailCard: React.FC<ContactDetailProps> = ({
   className = "",
   contact,
@@ -32,7 +57,11 @@ const ContactDetailCard: React.FC<ContactDetailProps> = ({
   return (
     <div className={joinClassNames(baseClassName, className)}>
       <div className={bem("content")}>
-        <button onClick={onClose} className={bem("exit-button")}>
+        <button
+          onClick={onClose}
+          className={bem("exit-button")}
+          aria-label="Close"
+        >
           <IconX size="32" />
         </button>
         <div className={bem("temp-guage-container")}>
@@ -59,23 +88,10 @@ const ContactDetailCard: React.FC<ContactDetailProps> = ({
               {contact.jobTitle} @ {contact.company}
             </p>
           </div>
-          <div className={bem("social-icon-container")}>
-            <div className={bem("social-icon")}>
-              <IconMailFilled className={bem("social-icon--icon")} size="20" />
-            </div>
-            <div className={bem("social-icon")}>
-              <IconBrandTwitterFilled
-                className={bem("social-icon--icon")}
-                size="20"
-              />
-            </div>
-            <div className={bem("social-icon")}>
-              <IconBrandLinkedin
-                className={bem("social-icon--icon")}
-                size="20"
-              />
-            </div>
-          </div>
+          <SocialIconGroup
+            icons={socialIcons}
+            className={bem("social-icon-container")}
+          />
         </div>
         <ScrollSection className={bem("scroll-section")} />
       </div>

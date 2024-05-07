@@ -1,0 +1,11 @@
+// src/components/social-icon-group/SocialIconGroup.scss
+.social-icon-group {
+  @apply flex space-x-3 mx-auto;
+
+  &__icon {
+    @apply rounded-full bg-primary h-fit p-1 cursor-pointer hover:bg-secondary;
+    &--icon {
+      @apply text-white;
+    }
+  }
+}

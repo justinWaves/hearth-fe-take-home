@@ -14,7 +14,7 @@ import {
 } from "@tabler/icons-react";
 import { joinClassNames } from "../../utils/join-class-names";
 import { bemElement, bemModifier } from "../../utils/bem-class-names";
-import Button from "@/elements/button/Button";
+import Button from "@/elements/Button/Button";
 import useCompanyLogo from "@/hooks/useCompanyLogo";
 
 interface IContactTableProps {
