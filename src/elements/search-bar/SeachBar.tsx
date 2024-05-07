@@ -1,4 +1,3 @@
-// src/elements/search-bar/SearchBar.tsx
 import React, { FC } from "react";
 import { IconSearch } from "@tabler/icons-react";
 import { bemElement } from "@/utils/bem-class-names";

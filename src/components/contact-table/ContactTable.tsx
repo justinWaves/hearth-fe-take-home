@@ -1,12 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-// src/components/contact-table/ContactTable.tsx
 "use client";
-
 import React, { useState, FC } from "react";
-import Image from "next/image";
 import contactsData from "../../data/contacts.json";
 import "./ContactTable.scss";
-import { IContact } from "@/types";
+import { IContact } from "@/types/types";
 import ContactDetailCard from "../contact-detail-card/ContactDetailCard";
 import {
   IconUser,
@@ -17,23 +14,8 @@ import {
 } from "@tabler/icons-react";
 import { joinClassNames } from "../../utils/join-class-names";
 import { bemElement, bemModifier } from "../../utils/bem-class-names";
-import Button from "@/elements/Button/Button";
-
-// A function mapping company names to their respective logo paths
-const getCompanyLogo = (companyName: string): string => {
-  const logos: Record<string, string> = {
-    Salesforce: "./images/company-logos/salesforce-logo-sm.png",
-    LinkedIn: "./images/company-logos/linkedin-logo-sm.png",
-    Intercom: "./images/company-logos/intercom-logo-sm.png",
-    Slack: "./images/company-logos/slack-logo-sm.png",
-    Google: "./images/company-logos/google-logo-sm.png",
-    SendGrid: "./images/company-logos/sendgrid-logo-sm.png",
-    Shopify: "./images/company-logos/shopify-logo-sm.png",
-    Notion: "./images/company-logos/notion-logo-sm.png",
-  };
-
-  return logos[companyName] || "/images/default.png";
-};
+import Button from "@/elements/button/Button";
+import useCompanyLogo from "@/hooks/useCompanyLogo";
 
 interface IContactTableProps {
   className?: string;
@@ -46,6 +28,7 @@ const bem = bemElement(baseClassName);
 
 const ContactTable: FC<IContactTableProps> = ({ className = "" }) => {
   const [selectedContact, setSelectedContact] = useState<IContact | null>(null);
+  const { getCompanyLogo } = useCompanyLogo();
 
   const handleContactClick = (contact: IContact) => {
     setSelectedContact(contact);
