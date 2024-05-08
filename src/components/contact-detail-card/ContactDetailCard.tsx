@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-// src/components/contact-detail-card/ContactDetailCard.tsx
 import React from "react";
 import { IContact } from "@/types/types";
 import "./ContactDetailCard.scss";

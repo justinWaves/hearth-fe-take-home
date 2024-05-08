@@ -1,4 +1,3 @@
-// src/components/social-icon-group/SocialIconGroup.tsx
 import React from "react";
 import { bemElement } from "../../utils/bem-class-names";
 import { joinClassNames } from "../../utils/join-class-names";

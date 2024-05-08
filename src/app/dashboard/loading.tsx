@@ -1,9 +1,9 @@
 import React from "react";
-import "./contacts-page.scss";
+import "./dashboard-loading.scss";
 import { IconLoader2 } from "@tabler/icons-react";
 import { bemElement } from "@/utils/bem-class-names";
 
-const baseClassName = "contact-loading-page";
+const baseClassName = "dashboard-loading";
 const bem = bemElement(baseClassName);
 
 function LoadingContatcs() {

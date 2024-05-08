@@ -1,4 +1,3 @@
-// src/components/scroll-section/ScrollSection.tsx
 import React, { useState } from "react";
 import "./ScrollSection.scss";
 import { IconMail, IconCalendarEvent } from "@tabler/icons-react";

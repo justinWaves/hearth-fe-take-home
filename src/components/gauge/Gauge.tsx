@@ -1,4 +1,3 @@
-// src/components/gauge/Gauge.tsx
 import React, { useEffect, useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { joinClassNames } from "../../utils/join-class-names";

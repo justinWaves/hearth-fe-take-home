@@ -1,4 +1,3 @@
-// src/pages/ContactListPage.tsx
 "use client";
 import ContactTable from "@/components/contact-table/ContactTable";
 import { joinClassNames } from "@/utils/join-class-names";

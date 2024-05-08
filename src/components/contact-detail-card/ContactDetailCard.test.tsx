@@ -1,8 +1,7 @@
-// ContactDetailCard.test.tsx
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import "@testing-library/jest-dom"; // Import jest-dom matchers
-import ContactDetailCard from "./ContactDetailCard"; // Adjust the import path as necessary
+import "@testing-library/jest-dom";
+import ContactDetailCard from "./ContactDetailCard";
 import { IContact } from "@/types/types";
 
 describe("ContactDetailCard Component", () => {

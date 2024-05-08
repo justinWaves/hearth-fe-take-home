@@ -1,0 +1,7 @@
+.dashboard-loading {
+  @apply grid place-content-center;
+
+  &__loading-icon {
+    @apply animate-spin;
+  }
+}
