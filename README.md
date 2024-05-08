@@ -1,6 +1,8 @@
 # Hearth Frontend Engineer Take Home Challenge
 
-Hello and welcome, I took this opportunity to really dive deep into Next.JS App Router, it's surrounding patterns. I must say, huge fan!
+Hello and welcome, I took this opportunity to really dive deep into Next.JS App Router, it's surrounding patterns. I must say, huge fan! 🙌
+
+I created a loom video describing my implementation [here](https://www.loom.com/share/f42bbf60c2e44108a62a62ce72878ca5?sid=cb6dd473-3006-49e3-b6fb-df78e4ac1c76)
 
 ## Overview
 
