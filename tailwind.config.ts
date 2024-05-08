@@ -28,7 +28,7 @@ const config: Config = {
         },
       },
       animation: {
-        fadeIn: "fadeIn .05s ease-in-out",
+        fadeIn: "fadeIn 0.5s ease-in-out",
       },
     },
   },
