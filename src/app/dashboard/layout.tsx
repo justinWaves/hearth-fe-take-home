@@ -13,10 +13,8 @@ function DashboardLayout({
     <>
       <NavBar />
       <div className="dashboard__layout">
-        <div className="dashboard__menu-container">
-      {children}
-      </div>
-      {contacts}
+        <div className="dashboard__menu-container">{children}</div>
+        {contacts}
       </div>
     </>
   );

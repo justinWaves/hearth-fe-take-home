@@ -7,6 +7,7 @@ import {
   IconChevronDown,
   IconShare,
 } from "@tabler/icons-react";
+import { simulateDelay } from "@/utils/simulate-delay";
 
 interface IDashboardPageProps {
   className?: string;
@@ -15,7 +16,8 @@ interface IDashboardPageProps {
 const baseClassName = "dashboard";
 const bem = bemElement(baseClassName);
 
-function DashboardPage({ className = "" }: IDashboardPageProps) {
+async function DashboardPage({ className = "" }: IDashboardPageProps) {
+  await simulateDelay(3000);
   return (
     <div className={joinClassNames(baseClassName, className)}>
       <div>
