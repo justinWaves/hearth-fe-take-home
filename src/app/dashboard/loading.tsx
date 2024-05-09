@@ -10,6 +10,7 @@ function LoadingContatcs() {
   return (
     <div className={baseClassName}>
       <IconLoader2 size={50} className={bem("loading-icon")} />
+      <p className={bem("loading-text")}>Loading</p>
     </div>
   );
 }

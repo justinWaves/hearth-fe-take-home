@@ -4,4 +4,7 @@
   &__loading-icon {
     @apply animate-spin text-extraLightText;
   }
+  &__loading-text {
+    @apply text-lightText animate-pulse text-center text-xs;
+  }
 }
