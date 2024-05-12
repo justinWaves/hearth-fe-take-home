@@ -2,7 +2,7 @@
   @apply max-w-7xl relative top-5 md:top-0;
   @apply border-y border-zinc-200;
   @apply md:mt-10 mx-auto;
-  @apply overflow-scroll text-nowrap;
+  @apply overflow-x-auto text-nowrap;
 
   &__heading-container {
     @apply pt-5;
@@ -21,33 +21,43 @@
     @apply md:hidden mt-2 mx-auto text-sm;
   }
   &__t-header {
-    @apply text-left font-normal text-lightText border-b border-zinc-200 w-[200px] h-[10px];
+    @apply text-left font-normal text-lightText border-b border-zinc-200;
+    @apply w-[200px];
+    @apply text-sm py-2;
+    @apply cursor-pointer hover:bg-zinc-100;
+
     &--outer-left {
-      @apply border-r;
-      @apply pl-5;
+      @apply border-r border-zinc-200 pl-5;
     }
+
     &--outer-right {
-      @apply border-l;
-      @apply pr-5;
+      @apply border-l border-zinc-200 pr-5;
     }
+
     &--center {
-      @apply border;
+      @apply border-x border-zinc-200;
+    }
+
+    &__icon {
+      @apply inline-block ml-2 align-middle;
     }
   }
   &__row {
     @apply cursor-pointer hover:bg-zinc-100;
   }
   &__cell {
-    @apply text-lightText p-1 border-b border-zinc-200 min-w-[200px];
-    @apply text-sm;
+    @apply text-lightText p-1 border-b border-zinc-200;
+    @apply text-sm min-w-[200px];
 
     &--outer-left {
       @apply border-r;
       @apply pl-5;
     }
+
     &--center {
-      @apply border;
+      @apply border-x;
     }
+
     &--outer-right {
       @apply border-l;
       @apply pr-5;
@@ -55,9 +65,6 @@
   }
   &__avatar {
     @apply inline-block w-7 h-7 mr-2 z-0;
-  }
-  &__header-icon {
-    @apply inline-block mr-1 text-lightText;
   }
   &__name-text {
     @apply text-boldText font-semibold;

@@ -1,0 +1,31 @@
+// src/styles/ContactTableRow.scss
+.contact-table-row {
+  @apply cursor-pointer hover:bg-zinc-100;
+
+  &__cell {
+    @apply text-lightText p-1 border-b border-zinc-200 min-w-[200px];
+    @apply text-sm;
+
+    &--outer-left {
+      @apply border-r;
+      @apply pl-5;
+    }
+
+    &--center {
+      @apply border;
+    }
+
+    &--outer-right {
+      @apply border-l;
+      @apply pr-5;
+    }
+  }
+
+  &__avatar {
+    @apply inline-block w-7 h-7 mr-2 z-0;
+  }
+
+  &__name-text {
+    @apply text-boldText font-semibold;
+  }
+}
