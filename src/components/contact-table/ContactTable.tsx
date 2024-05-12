@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useState, useMemo } from "react";
+import { FixedSizeList as List } from "react-window";
 import contactsData from "../../data/contacts.json";
 import "./ContactTable.scss";
 import { IContact } from "@/types/types";
@@ -31,7 +32,7 @@ const ContactTable: React.FC<IContactTableProps> = ({ className = "" }) => {
   const [sortDirection, setSortDirection] = useState("ascending");
 
   const sortedContacts = useMemo(() => {
-    return [...contactsData].sort((a: IContact, b: IContact) => {
+    return [...contactsData].sort((a, b) => {
       const fieldA = a[sortField];
       const fieldB = b[sortField];
       if (fieldA < fieldB) {
@@ -48,7 +49,7 @@ const ContactTable: React.FC<IContactTableProps> = ({ className = "" }) => {
     setSelectedContact(contact);
   };
 
-  const handleSortChange = (field: string) => {
+  const handleSortChange = (field: keyof IContact) => {
     if (field === sortField) {
       setSortDirection(
         sortDirection === "ascending" ? "descending" : "ascending"
@@ -80,59 +81,66 @@ const ContactTable: React.FC<IContactTableProps> = ({ className = "" }) => {
       <table className={joinClassNames(baseClassName, className)}>
         <thead>
           <tr>
+            {/* Headers with onClick for sorting */}
             <th
               onClick={() => handleSortChange("firstName")}
-              className={bemModifier(bem("t-header"), "outer-left")}
+              className={bemModifier(bem("table-header"), "outer-left")}
             >
-              <IconUser size={18} className={bem("t-header__icon")} /> Name
+              <IconUser size={18} className={bem("table-header--icon")} /> Name
             </th>
             <th
               onClick={() => handleSortChange("company")}
-              className={bemModifier(bem("t-header"), "center")}
+              className={bemModifier(bem("table-header"), "center")}
             >
-              <IconBriefcase size={18} className={bem("t-header__icon")} />{" "}
+              <IconBriefcase size={18} className={bem("table-header--icon")} />{" "}
               Company
             </th>
             <th
               onClick={() => handleSortChange("jobTitle")}
-              className={bemModifier(bem("t-header"), "center")}
+              className={bemModifier(bem("table-header"), "center")}
             >
-              <IconBriefcase size={18} className={bem("t-header__icon")} />{" "}
+              <IconBriefcase size={18} className={bem("table-header--icon")} />{" "}
               Title
             </th>
             <th
               onClick={() => handleSortChange("location")}
-              className={bemModifier(bem("t-header"), "center")}
+              className={bemModifier(bem("table-header"), "center")}
             >
-              <IconMapPin size={18} className={bem("t-header__icon")} />{" "}
+              <IconMapPin size={18} className={bem("table-header--icon")} />{" "}
               Location
             </th>
             <th
               onClick={() => handleSortChange("lastTouchpoint")}
-              className={bemModifier(bem("t-header"), "center")}
+              className={bemModifier(bem("table-header"), "center")}
             >
-              <IconClock size={18} className={bem("t-header__icon")} /> Last
+              <IconClock size={18} className={bem("table-header--icon")} /> Last
               Touchpoint
             </th>
             <th
               onClick={() => handleSortChange("latestActivity")}
-              className={bemModifier(bem("t-header"), "outer-right")}
+              className={bemModifier(bem("table-header"), "outer-right")}
             >
-              <IconActivity size={18} className={bem("t-header__icon")} />{" "}
+              <IconActivity size={18} className={bem("table-header--icon")} />{" "}
               Latest Activity
             </th>
           </tr>
         </thead>
-        <tbody>
-          {sortedContacts.map((contact) => (
-            <ContactTableRow
-              key={contact.id}
-              contact={contact}
-              onClick={handleContactClick}
-            />
-          ))}
-        </tbody>
       </table>
+      <List
+        height={800}
+        itemCount={sortedContacts.length}
+        itemSize={36}
+        width={1600}
+      >
+        {({ index, style }) => (
+          <ContactTableRow
+            key={sortedContacts[index].id}
+            contact={sortedContacts[index]}
+            onClick={handleContactClick}
+            style={style}
+          />
+        )}
+      </List>
     </div>
   );
 };

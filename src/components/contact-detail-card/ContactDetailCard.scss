@@ -1,7 +1,8 @@
 .contact-detail-card {
   @apply absolute z-50 w-screen h-[calc(100vh-50px)] md:w-[calc(100vw-134px)];
-  @apply grid place-content-center;
+  @apply flex justify-center md:pt-10;
   @apply backdrop-blur-md;
+  @apply overflow-auto;
 
   &__content {
     @apply md:relative w-screen h-[calc(100vh-50px)] md:w-[575px] md:h-[750px];

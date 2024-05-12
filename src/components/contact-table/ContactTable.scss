@@ -20,9 +20,9 @@
   &__save-button-mobile {
     @apply md:hidden mt-2 mx-auto text-sm;
   }
-  &__t-header {
+  &__table-header {
     @apply text-left font-normal text-lightText border-b border-zinc-200;
-    @apply w-[200px];
+    @apply min-w-[200px];
     @apply text-sm py-2;
     @apply cursor-pointer hover:bg-zinc-100;
 
@@ -38,16 +38,17 @@
       @apply border-x border-zinc-200;
     }
 
-    &__icon {
+    &--icon {
       @apply inline-block ml-2 align-middle;
     }
   }
   &__row {
     @apply cursor-pointer hover:bg-zinc-100;
+    @apply transition-all duration-500 w-[200px];
   }
   &__cell {
     @apply text-lightText p-1 border-b border-zinc-200;
-    @apply text-sm min-w-[200px];
+    @apply text-sm w-[200px];
 
     &--outer-left {
       @apply border-r;

@@ -1,10 +1,9 @@
-// src/styles/ContactTableRow.scss
 .contact-table-row {
   @apply cursor-pointer hover:bg-zinc-100;
 
   &__cell {
     @apply text-lightText p-1 border-b border-zinc-200 min-w-[200px];
-    @apply text-sm;
+    @apply text-sm text-nowrap;
 
     &--outer-left {
       @apply border-r;
@@ -27,5 +26,8 @@
 
   &__name-text {
     @apply text-boldText font-semibold;
+  }
+  &__company-logo {
+    @apply inline-block mr-2;
   }
 }
