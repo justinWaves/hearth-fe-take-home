@@ -1,7 +1,10 @@
 .dashboard-loading {
-  @apply grid place-content-center;
+  @apply grid items-center place-content-center h-full w-full;
 
   &__loading-icon {
-    @apply animate-spin;
+    @apply animate-spin text-extraLightText;
+  }
+  &__loading-text {
+    @apply text-lightText animate-pulse text-center text-xs;
   }
 }
