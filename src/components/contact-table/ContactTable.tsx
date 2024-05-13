@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useState, useMemo } from "react";
-import contactsData from "../../data/contacts.json";
+// import contactsData from "../../data/contacts.json";
 import "./ContactTable.scss";
 import { IContact } from "@/types/types";
 import ContactDetailCard from "../contact-detail-card/ContactDetailCard";
@@ -19,13 +19,17 @@ import Button from "@/elements/Button/Button";
 
 interface IContactTableProps {
   className?: string;
+  contactsData: IContact[];
 }
 
 const searchLocation = "San Francisco";
 const baseClassName = "contact-table";
 const bem = bemElement(baseClassName);
 
-const ContactTable: React.FC<IContactTableProps> = ({ className = "" }) => {
+const ContactTable: React.FC<IContactTableProps> = ({
+  className = "",
+  contactsData,
+}) => {
   const [selectedContact, setSelectedContact] = useState<IContact | null>(null);
   const [sortField, setSortField] = useState("firstName");
   const [sortDirection, setSortDirection] = useState("ascending");
