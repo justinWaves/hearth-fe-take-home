@@ -1,5 +1,5 @@
 .contact-table {
-  @apply max-w-7xl relative top-5 md:top-0;
+  @apply max-w-7xl relative top-5 md:top-0 w-full;
   @apply border-y border-zinc-200;
   @apply md:mt-10 mx-auto;
   @apply overflow-x-auto text-nowrap;
@@ -20,7 +20,7 @@
   &__save-button-mobile {
     @apply md:hidden mt-2 mx-auto text-sm;
   }
-  &__t-header {
+  &__table-header {
     @apply text-left font-normal text-lightText border-b border-zinc-200;
     @apply w-[200px];
     @apply text-sm py-2;
@@ -68,5 +68,8 @@
   }
   &__name-text {
     @apply text-boldText font-semibold;
+  }
+  &__pagination-controls {
+    @apply grid place-content-center mt-10 md:mt-5;
   }
 }

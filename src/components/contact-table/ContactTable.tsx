@@ -1,11 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useState, useMemo } from "react";
-// import contactsData from "../../data/contacts.json";
-import "./ContactTable.scss";
-import { IContact } from "@/types/types";
 import ContactDetailCard from "../contact-detail-card/ContactDetailCard";
 import ContactTableRow from "../contact-table-row/ContactTableRow";
+import { IContact } from "@/types/types";
 import {
   IconActivity,
   IconBriefcase,
@@ -16,6 +13,9 @@ import {
 import { bemElement, bemModifier } from "../../utils/bem-class-names";
 import { joinClassNames } from "../../utils/join-class-names";
 import Button from "@/elements/Button/Button";
+import "./ContactTable.scss";
+import Pagination from "../pagination/Pagination";
+import { usePagination } from "../../hooks/usePagination";
 
 interface IContactTableProps {
   className?: string;
@@ -31,36 +31,37 @@ const ContactTable: React.FC<IContactTableProps> = ({
   contactsData,
 }) => {
   const [selectedContact, setSelectedContact] = useState<IContact | null>(null);
+  const itemsPerPage = 20;
+  const { paginatedData, currentPage, setCurrentPage, totalPages } =
+    usePagination({
+      data: contactsData,
+      itemsPerPage,
+    });
+
   const [sortField, setSortField] = useState("firstName");
   const [sortDirection, setSortDirection] = useState("ascending");
 
   const sortedContacts = useMemo(() => {
-    return [...contactsData].sort((a: IContact, b: IContact) => {
+    return [...contactsData].sort((a, b) => {
       const fieldA = a[sortField];
       const fieldB = b[sortField];
-      if (fieldA < fieldB) {
-        return sortDirection === "ascending" ? -1 : 1;
-      }
-      if (fieldA > fieldB) {
-        return sortDirection === "ascending" ? 1 : -1;
-      }
-      return 0;
+      return (
+        (fieldA < fieldB ? -1 : 1) * (sortDirection === "ascending" ? 1 : -1)
+      );
     });
-  }, [sortField, sortDirection]);
+  }, [sortField, sortDirection, contactsData]);
 
   const handleContactClick = (contact: IContact) => {
     setSelectedContact(contact);
   };
 
   const handleSortChange = (field: string) => {
-    if (field === sortField) {
-      setSortDirection(
-        sortDirection === "ascending" ? "descending" : "ascending"
-      );
-    } else {
-      setSortField(field);
-      setSortDirection("ascending");
-    }
+    setSortDirection(
+      sortField === field && sortDirection === "ascending"
+        ? "descending"
+        : "ascending"
+    );
+    setSortField(field);
   };
 
   return (
@@ -86,49 +87,49 @@ const ContactTable: React.FC<IContactTableProps> = ({
           <tr>
             <th
               onClick={() => handleSortChange("firstName")}
-              className={bemModifier(bem("t-header"), "outer-left")}
+              className={bemModifier(bem("table-header"), "outer-left")}
             >
-              <IconUser size={18} className={bem("t-header__icon")} /> Name
+              <IconUser size={18} className={bem("table-header__icon")} /> Name
             </th>
             <th
               onClick={() => handleSortChange("company")}
-              className={bemModifier(bem("t-header"), "center")}
+              className={bemModifier(bem("table-header"), "center")}
             >
-              <IconBriefcase size={18} className={bem("t-header__icon")} />
+              <IconBriefcase size={18} className={bem("table-header__icon")} />
               Company
             </th>
             <th
               onClick={() => handleSortChange("jobTitle")}
-              className={bemModifier(bem("t-header"), "center")}
+              className={bemModifier(bem("table-header"), "center")}
             >
-              <IconBriefcase size={18} className={bem("t-header__icon")} />
+              <IconBriefcase size={18} className={bem("table-header__icon")} />
               Title
             </th>
             <th
               onClick={() => handleSortChange("location")}
-              className={bemModifier(bem("t-header"), "center")}
+              className={bemModifier(bem("table-header"), "center")}
             >
-              <IconMapPin size={18} className={bem("t-header__icon")} />
+              <IconMapPin size={18} className={bem("table-header__icon")} />
               Location
             </th>
             <th
               onClick={() => handleSortChange("lastTouchpoint")}
-              className={bemModifier(bem("t-header"), "center")}
+              className={bemModifier(bem("table-header"), "center")}
             >
-              <IconClock size={18} className={bem("t-header__icon")} /> Last
+              <IconClock size={18} className={bem("table-header__icon")} /> Last
               Touchpoint
             </th>
             <th
               onClick={() => handleSortChange("latestActivity")}
-              className={bemModifier(bem("t-header"), "outer-right")}
+              className={bemModifier(bem("table-header"), "outer-right")}
             >
-              <IconActivity size={18} className={bem("t-header__icon")} />
+              <IconActivity size={18} className={bem("table-header__icon")} />
               Latest Activity
             </th>
           </tr>
         </thead>
         <tbody>
-          {sortedContacts.map((contact) => (
+          {paginatedData.map((contact: IContact) => (
             <ContactTableRow
               key={contact.id}
               contact={contact}
@@ -137,6 +138,12 @@ const ContactTable: React.FC<IContactTableProps> = ({
           ))}
         </tbody>
       </table>
+      <Pagination
+        className={bem("pagination-controls")}
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={setCurrentPage}
+      />
     </div>
   );
 };

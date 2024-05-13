@@ -1,0 +1,14 @@
+.pagination {
+  @apply flex;
+  @apply p-2;
+
+  &__button {
+    @apply border rounded-md;
+    @apply cursor-pointer;
+    @apply hover:bg-zinc-100;
+    @apply text-primary hover:text-secondary;
+  }
+  &__text {
+    @apply text-lightText mx-3;
+  }
+}
