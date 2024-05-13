@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import ContactDetailCard from "../contact-detail-card/ContactDetailCard";
 import ContactTableRow from "../contact-table-row/ContactTableRow";
 import { IContact } from "@/types/types";
@@ -16,6 +16,7 @@ import Button from "@/elements/Button/Button";
 import "./ContactTable.scss";
 import Pagination from "../pagination/Pagination";
 import { usePagination } from "../../hooks/usePagination";
+import { useSort } from "../../hooks/useSort";
 
 interface IContactTableProps {
   className?: string;
@@ -32,36 +33,20 @@ const ContactTable: React.FC<IContactTableProps> = ({
 }) => {
   const [selectedContact, setSelectedContact] = useState<IContact | null>(null);
   const itemsPerPage = 20;
+
+  const { sortedData, handleSortChange } = useSort<IContact>({
+    data: contactsData,
+    defaultField: "firstName",
+  });
+
   const { paginatedData, currentPage, setCurrentPage, totalPages } =
     usePagination({
-      data: contactsData,
+      data: sortedData,
       itemsPerPage,
     });
 
-  const [sortField, setSortField] = useState("firstName");
-  const [sortDirection, setSortDirection] = useState("ascending");
-
-  const sortedContacts = useMemo(() => {
-    return [...contactsData].sort((a, b) => {
-      const fieldA = a[sortField];
-      const fieldB = b[sortField];
-      return (
-        (fieldA < fieldB ? -1 : 1) * (sortDirection === "ascending" ? 1 : -1)
-      );
-    });
-  }, [sortField, sortDirection, contactsData]);
-
   const handleContactClick = (contact: IContact) => {
     setSelectedContact(contact);
-  };
-
-  const handleSortChange = (field: string) => {
-    setSortDirection(
-      sortField === field && sortDirection === "ascending"
-        ? "descending"
-        : "ascending"
-    );
-    setSortField(field);
   };
 
   return (
