@@ -84,7 +84,8 @@ const ContactDetailCard: React.FC<ContactDetailProps> = ({
               {contact.firstName} {contact.lastName}
             </h2>
             <p className={bem("job-title")}>
-              {contact.jobTitle} @ {contact.company}
+              {contact.jobTitle ? contact.jobTitle : "No Job Title"} @{" "}
+              {contact.company ? contact.company : "No Company Data"}
             </p>
           </div>
           <SocialIconGroup

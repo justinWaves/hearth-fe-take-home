@@ -11,7 +11,7 @@ const useCompanyLogo = () => {
   };
 
   const getCompanyLogo = (companyName: string): string => {
-    return logos[companyName] || "";
+    return logos[companyName] || "/images/company-logos/briefcase.png";
   };
 
   return { getCompanyLogo };

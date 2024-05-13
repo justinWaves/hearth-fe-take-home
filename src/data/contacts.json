@@ -3,15 +3,15 @@
     "id": 1,
     "firstName": "Alice",
     "lastName": "Johnson",
-    "jobTitle": "Software Engineer",
+    "jobTitle": "",
     "email": "alice25@gmail.com",
     "phone": "123-456-7890",
     "instagramHandle": "@alice_j",
     "temperatureScore": 87,
     "company": "Slack",
-    "location": "San Francisco, CA",
-    "lastTouchpoint": "Called 2 years ago",
-    "latestActivity": "User interview session"
+    "location": "",
+    "lastTouchpoint": "",
+    "latestActivity": ""
   },
   {
     "id": 2,
@@ -318,7 +318,7 @@
     "temperatureScore": 78,
     "company": "Slack",
     "location": "San Francisco, CA",
-    "lastTouchpoint": "Video call 3 days ago",
+    "lastTouchpoint": "Called 3 days ago",
     "latestActivity": "Product launch"
   },
   {
@@ -388,7 +388,7 @@
     "temperatureScore": 68,
     "company": "Shopify",
     "location": "San Francisco, CA",
-    "lastTouchpoint": "Video call 3 days ago",
+    "lastTouchpoint": "Emailed 3 days ago",
     "latestActivity": "Data analysis presentation"
   },
   {
@@ -627,7 +627,7 @@
     "temperatureScore": 83,
     "company": "Google",
     "location": "San Francisco, CA",
-    "lastTouchpoint": "Engineering review last Thursday",
+    "lastTouchpoint": "Called last Thursday",
     "latestActivity": "Prototype testing"
   },
   {
@@ -655,7 +655,7 @@
     "temperatureScore": 88,
     "company": "SendGrid",
     "location": "San Francisco, CA",
-    "lastTouchpoint": "Tech strategy meeting yesterday",
+    "lastTouchpoint": "Strategy meeting yesterday",
     "latestActivity": "System architecture redesign"
   },
   {
@@ -683,7 +683,7 @@
     "temperatureScore": 84,
     "company": "Intercom",
     "location": "San Francisco, CA",
-    "lastTouchpoint": "Lab review last Tuesday",
+    "lastTouchpoint": "Called last Tuesday",
     "latestActivity": "DNA analysis techniques"
   },
   {
@@ -703,13 +703,13 @@
   {
     "id": 51,
     "firstName": "Ada",
-    "lastName": "Lovelace",
+    "lastName": "Smithj",
     "jobTitle": "Programmer",
     "email": "ada51@gmail.com",
     "phone": "555-5111",
-    "instagramHandle": "@adalovelace",
+    "instagramHandle": "@adasmith",
     "temperatureScore": 94,
-    "company": "LinkedIn",
+    "company": "Facebook",
     "location": "San Francisco, CA",
     "lastTouchpoint": "Coding sprint last Thursday",
     "latestActivity": "Software deployment"
@@ -779,7 +779,7 @@
     "phone": "555-5616",
     "instagramHandle": "@jameswatson",
     "temperatureScore": 82,
-    "company": "Shopify",
+    "company": "",
     "location": "San Francisco, CA",
     "lastTouchpoint": "Research conference last Tuesday",
     "latestActivity": "Genetic sequencing"
@@ -793,7 +793,7 @@
     "phone": "555-5717",
     "instagramHandle": "@gregormendel",
     "temperatureScore": 88,
-    "company": "Intercom",
+    "company": "",
     "location": "San Francisco, CA",
     "lastTouchpoint": "Lab meeting yesterday",
     "latestActivity": "Genetic research"

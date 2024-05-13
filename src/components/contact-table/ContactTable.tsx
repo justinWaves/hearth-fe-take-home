@@ -90,21 +90,21 @@ const ContactTable: React.FC<IContactTableProps> = ({ className = "" }) => {
               onClick={() => handleSortChange("company")}
               className={bemModifier(bem("t-header"), "center")}
             >
-              <IconBriefcase size={18} className={bem("t-header__icon")} />{" "}
+              <IconBriefcase size={18} className={bem("t-header__icon")} />
               Company
             </th>
             <th
               onClick={() => handleSortChange("jobTitle")}
               className={bemModifier(bem("t-header"), "center")}
             >
-              <IconBriefcase size={18} className={bem("t-header__icon")} />{" "}
+              <IconBriefcase size={18} className={bem("t-header__icon")} />
               Title
             </th>
             <th
               onClick={() => handleSortChange("location")}
               className={bemModifier(bem("t-header"), "center")}
             >
-              <IconMapPin size={18} className={bem("t-header__icon")} />{" "}
+              <IconMapPin size={18} className={bem("t-header__icon")} />
               Location
             </th>
             <th
@@ -118,7 +118,7 @@ const ContactTable: React.FC<IContactTableProps> = ({ className = "" }) => {
               onClick={() => handleSortChange("latestActivity")}
               className={bemModifier(bem("t-header"), "outer-right")}
             >
-              <IconActivity size={18} className={bem("t-header__icon")} />{" "}
+              <IconActivity size={18} className={bem("t-header__icon")} />
               Latest Activity
             </th>
           </tr>
