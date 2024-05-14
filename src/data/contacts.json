@@ -514,7 +514,7 @@
     "temperatureScore": 49,
     "company": "Shopify",
     "location": "San Francisco, CA",
-    "lastTouchpoint": "Logistics planning session 2 days ago",
+    "lastTouchpoint": "Emailed 2 weeks ago",
     "latestActivity": "Shipping strategy overhaul"
   },
   {
@@ -599,7 +599,7 @@
     "temperatureScore": 77,
     "company": "Slack",
     "location": "San Francisco, CA",
-    "lastTouchpoint": "Innovation workshop last week",
+    "lastTouchpoint": "Workshop last week",
     "latestActivity": "New product brainstorm"
   },
   {
@@ -641,7 +641,7 @@
     "temperatureScore": 95,
     "company": "Notion",
     "location": "San Francisco, CA",
-    "lastTouchpoint": "Physics seminar last Monday",
+    "lastTouchpoint": "Seminar last Monday",
     "latestActivity": "New theory development"
   },
   {
@@ -753,7 +753,7 @@
     "temperatureScore": 75,
     "company": "SendGrid",
     "location": "San Francisco, CA",
-    "lastTouchpoint": "Communications workshop last week",
+    "lastTouchpoint": "Workshop last week",
     "latestActivity": "New communications technology"
   },
   {
@@ -823,7 +823,7 @@
     "temperatureScore": 99,
     "company": "Google",
     "location": "San Francisco, CA",
-    "lastTouchpoint": "Public speaking event last Thursday",
+    "lastTouchpoint": "Meeting 4 months ago",
     "latestActivity": "Theoretical physics lecture"
   },
   {
@@ -837,7 +837,7 @@
     "temperatureScore": 91,
     "company": "SendGrid",
     "location": "San Francisco, CA",
-    "lastTouchpoint": "Chemistry symposium last Friday",
+    "lastTouchpoint": "Called 6 days ago",
     "latestActivity": "Radioactive elements study"
   }
 ]

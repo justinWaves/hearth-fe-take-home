@@ -18,6 +18,7 @@ This responsive web application features a dynamic contact table with detailed v
 - **Detailed Contact View**: Modal presentation of contact details with a dynamic temperature indicator, reflecting the engagement level through color-coded backgrounds.
 - **Animated Interactions**: Utilizes React Spring for smooth, physics-based animations to enhance UI interactivity.
 - **Reusable Components and Hooks**: Designed for scalability and reuse, components like `TemperatureDisplay` are modular and can be integrated into other projects with minimal adjustments.
+- **Enhanced Accessibility Features**: Implemented focus trapping within modals and keyboard navigation across interactive elements, ensuring the application is accessible to users with disabilities and supports various assistive technologies.
 
 ## Technology Stack
 
@@ -34,16 +35,16 @@ To get this project up and running on your local machine, follow these steps:
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/justinWaves/hearth-fe-take-home.git
-   cd hearth-fe-take-home
+```bash
+git clone https://github.com/justinWaves/hearth-fe-take-home.git
+cd hearth-fe-take-home
 
-   ```
+```
 
 2. Install dependencies:
 
 ```bash
-   npm install
+npm install
 # or
 yarn install
 ```
@@ -67,6 +68,7 @@ To run this project, you will need the following dependencies:
 - Tailwind CSS
 - SCSS
 - React Spring
+- Focus Trap React
 - Jest
 - React Testing Library
 - TypeScript
@@ -78,4 +80,4 @@ Thank you for considering my application. I look forward to the possibility of d
 Best Regards,
 
 Justin Weisberg
-🌊🌊🌊🌊
+🌊

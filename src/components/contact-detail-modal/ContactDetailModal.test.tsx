@@ -1,10 +1,10 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import ContactDetailCard from "./ContactDetailCard";
+import ContactDetailModal from "./ContactDetailModal";
 import { IContact } from "@/types/types";
 
-describe("ContactDetailCard Component", () => {
+describe("ContactDetailModal Component", () => {
   const contact: IContact = {
     id: 1,
     firstName: "Alice",
@@ -21,7 +21,7 @@ describe("ContactDetailCard Component", () => {
   };
 
   it("renders contact information correctly", () => {
-    render(<ContactDetailCard contact={contact} onClose={jest.fn()} />);
+    render(<ContactDetailModal contact={contact} onClose={jest.fn()} />);
 
     expect(screen.getByText(/alice johnson/i)).toBeInTheDocument();
     expect(
@@ -40,7 +40,7 @@ describe("ContactDetailCard Component", () => {
 
   it("triggers the onClose callback when the close button is clicked", () => {
     const onCloseMock = jest.fn();
-    render(<ContactDetailCard contact={contact} onClose={onCloseMock} />);
+    render(<ContactDetailModal contact={contact} onClose={onCloseMock} />);
 
     const closeButton = screen.getByRole("button", { name: /close/i });
     fireEvent.click(closeButton);

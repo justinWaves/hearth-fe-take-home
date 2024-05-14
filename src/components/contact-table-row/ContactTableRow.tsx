@@ -1,10 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-
 import React from "react";
 import { IContact } from "@/types/types";
 import useCompanyLogo from "@/hooks/useCompanyLogo";
-import "./ContactTableRow.scss"; // Import the new stylesheet
-import { IconBriefcase } from "@tabler/icons-react";
+import "./ContactTableRow.scss";
 
 interface ContactTableRowProps {
   contact: IContact;
@@ -17,8 +15,20 @@ const ContactTableRow: React.FC<ContactTableRowProps> = ({
 }) => {
   const { getCompanyLogo } = useCompanyLogo();
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLTableRowElement>) => {
+    if (event.key === "Enter") {
+      onClick(contact);
+    }
+  };
+
   return (
-    <tr onClick={() => onClick(contact)} className="contact-table-row">
+    <tr
+      onClick={() => onClick(contact)}
+      onKeyDown={handleKeyDown}
+      className="contact-table-row"
+      role="button"
+      tabIndex={0}
+    >
       <td className="contact-table-row__cell contact-table-row__cell--outer-left">
         <img
           src={`https://api.dicebear.com/8.x/miniavs/svg?seed=${contact.firstName}`}

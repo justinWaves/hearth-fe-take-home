@@ -7,6 +7,10 @@
     @apply cursor-pointer;
     @apply hover:bg-zinc-100;
     @apply text-primary hover:text-secondary;
+
+    &--disabled {
+      @apply text-extraLightText cursor-not-allowed;
+    }
   }
   &__text {
     @apply text-lightText mx-3;

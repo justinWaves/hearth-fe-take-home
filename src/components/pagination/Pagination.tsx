@@ -20,24 +20,33 @@ const Pagination: React.FC<PaginationProps> = ({
   totalPages,
   onPageChange,
 }) => {
+  const isPrevDisabled = currentPage === 0;
+  const isNextDisabled = currentPage >= totalPages - 1;
+
   return (
-    <div className={joinClassNames(baseClassName, className)}>
+    <div
+      className={joinClassNames(baseClassName, className)}
+      role="navigation"
+      aria-label="Pagination"
+    >
       <button
-        className={bemModifier(bem("button"), "left")}
+        className={bemModifier(bem("button"), { disabled: isPrevDisabled })}
         onClick={() => onPageChange(currentPage - 1)}
-        disabled={currentPage === 0}
+        disabled={isPrevDisabled}
+        aria-label="Go to previous page"
       >
-        <IconChevronLeft />
+        <IconChevronLeft aria-hidden="true" />
       </button>
       <span className={bem("text")}>
         Page {currentPage + 1} of {totalPages}
       </span>
       <button
-        className={bemModifier(bem("button"), "right")}
+        className={bemModifier(bem("button"), { disabled: isNextDisabled })}
         onClick={() => onPageChange(currentPage + 1)}
-        disabled={currentPage >= totalPages - 1}
+        disabled={isNextDisabled}
+        aria-label="Go to next page"
       >
-        <IconChevronRight />
+        <IconChevronRight aria-hidden="true" />
       </button>
     </div>
   );

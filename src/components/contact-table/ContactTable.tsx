@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import ContactDetailCard from "../contact-detail-card/ContactDetailCard";
+import ContactDetailModal from "../contact-detail-modal/ContactDetailModal";
 import ContactTableRow from "../contact-table-row/ContactTableRow";
 import { IContact } from "@/types/types";
 import {
@@ -49,10 +49,18 @@ const ContactTable: React.FC<IContactTableProps> = ({
     setSelectedContact(contact);
   };
 
+  const handleKeyDown =
+    (callback: () => void) =>
+    (event: React.KeyboardEvent<HTMLTableHeaderCellElement>) => {
+      if (event.key === "Enter") {
+        callback();
+      }
+    };
+
   return (
     <div className="w-full">
       {selectedContact && (
-        <ContactDetailCard
+        <ContactDetailModal
           contact={selectedContact}
           onClose={() => setSelectedContact(null)}
         />
@@ -72,43 +80,96 @@ const ContactTable: React.FC<IContactTableProps> = ({
           <tr>
             <th
               onClick={() => handleSortChange("firstName")}
+              onKeyDown={handleKeyDown(() => handleSortChange("firstName"))}
               className={bemModifier(bem("table-header"), "outer-left")}
+              scope="col"
+              role="button"
+              tabIndex={0}
             >
-              <IconUser size={18} className={bem("table-header__icon")} /> Name
+              <IconUser
+                size={18}
+                className={bem("table-header__icon")}
+                role="presentation"
+              />
+              Name
             </th>
             <th
               onClick={() => handleSortChange("company")}
+              onKeyDown={handleKeyDown(() => handleSortChange("company"))}
               className={bemModifier(bem("table-header"), "center")}
+              scope="col"
+              role="button"
+              tabIndex={0}
             >
-              <IconBriefcase size={18} className={bem("table-header__icon")} />
+              <IconBriefcase
+                size={18}
+                className={bem("table-header__icon")}
+                role="presentation"
+              />
               Company
             </th>
             <th
               onClick={() => handleSortChange("jobTitle")}
+              onKeyDown={handleKeyDown(() => handleSortChange("jobTitle"))}
               className={bemModifier(bem("table-header"), "center")}
+              scope="col"
+              role="button"
+              tabIndex={0}
             >
-              <IconBriefcase size={18} className={bem("table-header__icon")} />
+              <IconBriefcase
+                size={18}
+                className={bem("table-header__icon")}
+                role="presentation"
+              />
               Title
             </th>
             <th
               onClick={() => handleSortChange("location")}
+              onKeyDown={handleKeyDown(() => handleSortChange("location"))}
               className={bemModifier(bem("table-header"), "center")}
+              scope="col"
+              role="button"
+              tabIndex={0}
             >
-              <IconMapPin size={18} className={bem("table-header__icon")} />
+              <IconMapPin
+                size={18}
+                className={bem("table-header__icon")}
+                role="presentation"
+              />
               Location
             </th>
             <th
               onClick={() => handleSortChange("lastTouchpoint")}
+              onKeyDown={handleKeyDown(() =>
+                handleSortChange("lastTouchpoint")
+              )}
               className={bemModifier(bem("table-header"), "center")}
+              scope="col"
+              role="button"
+              tabIndex={0}
             >
-              <IconClock size={18} className={bem("table-header__icon")} /> Last
-              Touchpoint
+              <IconClock
+                size={18}
+                className={bem("table-header__icon")}
+                role="presentation"
+              />
+              Last Touchpoint
             </th>
             <th
               onClick={() => handleSortChange("latestActivity")}
+              onKeyDown={handleKeyDown(() =>
+                handleSortChange("latestActivity")
+              )}
               className={bemModifier(bem("table-header"), "outer-right")}
+              scope="col"
+              role="button"
+              tabIndex={0}
             >
-              <IconActivity size={18} className={bem("table-header__icon")} />
+              <IconActivity
+                size={18}
+                className={bem("table-header__icon")}
+                role="presentation"
+              />
               Latest Activity
             </th>
           </tr>
